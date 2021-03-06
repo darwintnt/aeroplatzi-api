@@ -21,4 +21,14 @@ class Airport extends Model
         'latitude',
         'longitude',
     ];
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function City()
+    {
+        return $this->belongsTo(City::class);
+    }
 }

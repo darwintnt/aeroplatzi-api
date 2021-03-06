@@ -24,4 +24,24 @@ class Flight extends Model
         'boarding_gate',
         'flight_status',
     ];
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function originAirport()
+    {
+        return $this->belongsTo(Airport::class, 'id', 'origin_airport_id');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function destinationAirport()
+    {
+        return $this->belongsTo(Airport::class, 'id', 'destination_airport_id');
+    }
 }

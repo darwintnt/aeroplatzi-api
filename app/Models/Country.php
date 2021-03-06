@@ -18,4 +18,14 @@ class Country extends Model
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function Cities()
+    {
+        return $this->hasMany(City::class);
+    }
 }
