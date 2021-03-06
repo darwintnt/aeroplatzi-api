@@ -62,7 +62,9 @@ class FlightService implements FlightInterface
         $response = [];
 
         try {
-            $response = "Store";
+            $flight = $this->repository->store($request);
+            $response = $flight;
+            $message = 'the flight has been successfully stored';
         } catch (\Exception $e) {
             $success = false;
             $message = $e->getMessage();
@@ -89,7 +91,7 @@ class FlightService implements FlightInterface
         $response = [];
 
         try {
-            $response = "Show";
+            $response = $flight;
         } catch (\Exception $e) {
             $success = false;
             $message = $e->getMessage();
@@ -116,7 +118,9 @@ class FlightService implements FlightInterface
         $response = [];
 
         try {
-            $response = "Update";
+            $data = $this->repository->update($request, $flight);
+            $response = $data;
+            $message = 'the flight has been successfully updated';
         } catch (\Exception $e) {
             $success = false;
             $message = $e->getMessage();
@@ -143,7 +147,8 @@ class FlightService implements FlightInterface
         $response = [];
 
         try {
-            $response = "Delete";
+            $this->repository->delete($flight);
+            $message = 'the flight has been successfully deleted';
         } catch (\Exception $e) {
             $success = false;
             $message = $e->getMessage();
