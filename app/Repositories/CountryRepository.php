@@ -14,6 +14,6 @@ class CountryRepository
      */
     public function index()
     {
-        return Country::select('id','name')->all();
+        return Country::select('id','name')->get();
     }
 }
