@@ -7,7 +7,9 @@ interface CityInterface
 {
     /**
      * Undocumented function
+     *
+     * @param array $request
      */
-    public function index();
+    public function index(array $request);
 
 }
