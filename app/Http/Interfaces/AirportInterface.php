@@ -7,7 +7,9 @@ interface AirportInterface
 {
     /**
      * Undocumented function
+     *
+     * @param array $request
      */
-    public function getAirportsByCities();
+    public function getAirportsByCities(array $request);
 
 }

@@ -27,14 +27,14 @@ class CityService implements CityInterface
      *
      * @param array $request
      */
-    public function index()
+    public function index(array $request)
     {
         $success = true;
         $message = 'ok';
         $response = [];
 
         try {
-            $response =  $this->repository->index();
+            $response = $this->repository->index($request);
         } catch (\Exception $e) {
             $success = false;
             $message = $e->getMessage();

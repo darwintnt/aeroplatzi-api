@@ -29,9 +29,9 @@ class AirportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->successResponse($this->service->getAirportsByCities());
+        return $this->successResponse($this->service->getAirportsByCities($request->all()));
     }
 
     /**

@@ -27,14 +27,14 @@ class AirportService implements AirportInterface
      *
      * @param array $request
      */
-    public function getAirportsByCities()
+    public function getAirportsByCities(array $request)
     {
         $success = true;
         $message = 'ok';
         $response = [];
 
         try {
-            $response =  $this->repository->getAirportsByCities();
+            $response =  $this->repository->getAirportsByCities($request);
         } catch (\Exception $e) {
             $success = false;
             $message = $e->getMessage();

@@ -13,8 +13,10 @@ class CityRepository
      * @param array $request
      * @return mixed
      */
-    public function index()
+    public function index(array $request)
     {
-        return City::paginate();
+        return City::select('id','country_id','name')
+            ->where('country_id', $request['country'])
+            ->get();
     }
 }
