@@ -31,7 +31,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        return $this->successResponse($this->service->index());
     }
 
     /**

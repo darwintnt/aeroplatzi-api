@@ -15,6 +15,6 @@ class CityRepository
      */
     public function index()
     {
-        return City::paginate();
+        return City::select('id','country_id','name')->all();
     }
 }
